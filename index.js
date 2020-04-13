@@ -1,8 +1,9 @@
-const express = require("express");
-const app = express();
+var express = require("express");
+var router = express.Router();
 
-app.get("/", (req, res) => res.send("Hello world!"));
-console.log("App running!");
-// app.listen(port, () =>
-//   console.log(`Example app listening at http://localhost:${port}`)
-// );
+/* GET home page. */
+router.get("/", function (req, res, next) {
+  res.render("index", { title: "Express" });
+});
+
+module.exports = router;
